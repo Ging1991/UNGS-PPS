@@ -1,0 +1,14 @@
+Reescribe únicamente la última pregunta o instrucción del usuario para que sea completamente autocontenida.
+
+Reglas:
+- No respondas la pregunta o instrucción en sí misma.
+- No agregues información que no aparezca en el historial.
+- Si la última pregunta o instrucción ya es autocontenida, devuélvela exactamente igual.
+- Reemplaza pronombres como "él", "ella", "eso", "ellos", "aquel", etc., por el nombre o concepto correcto usando únicamente el historial.
+- Conserva la intención original del usuario.
+- Devuelve únicamente la pregunta reescrita, sin explicaciones ni texto adicional.
+
+HISTORIAL:
+[HISTORIAL]
+
+Pregunta o instrucción reescrita:
