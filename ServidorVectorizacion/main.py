@@ -7,7 +7,6 @@ import os
 os.system('')
 
 DIRECCION_CONFIGURACION = "configuracion.json"
-# Conseguir el driver desde https://github.com/ggml-org/llama.cpp/releases
 
 def esta_disponible(url_servicio):
 	try:
@@ -20,9 +19,12 @@ def esta_disponible(url_servicio):
 		return False
 
 def iniciar_servicio(driver, modelo, capas, contexto, servidor, puerto):
+
 	return subprocess.Popen([
 		driver,
 		"-m", modelo,
+		"--embeddings",
+		"--pooling", "mean",
 		"-ngl", capas,
 		"-c", contexto,
 		"--host", servidor,
@@ -37,7 +39,6 @@ def esperar_proceso(proceso, url_servicio):
 	return False
 
 def main():
-
 	with open(DIRECCION_CONFIGURACION, "r", encoding="utf-8") as archivo:
 		configuracion = json.load(archivo)
 
@@ -50,17 +51,17 @@ def main():
 	puerto = configuracion["puerto"]
 
 	if esta_disponible(url_servicio):
-		print("El servidor LLM ya estaba iniciado.")
+		print("\033[32m[CORRECTO] El servidor de vectorización ya estaba iniciado.\033[0m")
 		print("Puede cerrar esta ventana sin problemas.")
 		input("Presione ENTER para continuar...")
 		return
 		
-	print("Iniciando servidor LLM...")
+	print("Iniciando servidor de vectorización...")
 	proceso = iniciar_servicio(driver, modelo, capas, contexto, servidor, puerto)
 
 	if esperar_proceso(proceso, url_servicio):
-		print("\033[32mServidor LLM listo.\033[0m")
-		print("No cierre esta ventana mientras utiliza el sistema IA.")
+		print("\033[32m[CORRECTO] Servidor de vectorización listo.\033[0m")
+		print("\033[31m[ADVERTENCIA] No cierre esta ventana mientras utiliza el sistema IA.\033[0m")
 	else:
 		print("No se pudo iniciar el servidor.")
 

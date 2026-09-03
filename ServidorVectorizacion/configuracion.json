@@ -1,0 +1,9 @@
+{
+    "url_servicio" : "http://127.0.0.1:8081",
+    "driver" : "C://Users//Carlos//Desktop//TESIS//LlamaVulcan//llama-server.exe",
+    "modelo": "C://Users//Carlos//Desktop//TESIS//Modelos/nomic-embed-text-v1.5.Q4_K_M.gguf",
+    "capas" : "999",
+    "contexto" : "2048",
+    "servidor" : "127.0.0.1",
+    "puerto" : "8081"
+}
