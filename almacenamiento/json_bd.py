@@ -21,7 +21,6 @@ class JsonBD:
 			json.dump(datos, archivo, ensure_ascii=False, indent=2)
 
 	def guardar_acumulado(self, bloques):
-		print("guardar acum json")
 		documentos = self.leer()
 		documentos.extend(bloques)
 		self.guardar(documentos)

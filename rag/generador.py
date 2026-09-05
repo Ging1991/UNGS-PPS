@@ -4,7 +4,7 @@ class Generador:
 
 	def __init__(self, servidor):
 		self.servidor = servidor
-		self.temperature = 0.1
+		self.temperature = 0.2
 		self.num_ctx = 4000
 		self.num_predict = 500
 
