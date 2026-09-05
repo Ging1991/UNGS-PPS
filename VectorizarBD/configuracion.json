@@ -1,0 +1,6 @@
+{
+	"url_servicio" : "http://127.0.0.1:8081",
+	"direccionPDF" : "../datos/guion.pdf",
+	"direccionVectores" : "../datos/index.faiss",
+	"direccionJSON" : "../datos/documentos.json"
+}

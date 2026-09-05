@@ -1,4 +1,3 @@
-import requests
 from rag.historial import Historial
 from rag.generador import Generador
 from rag.recuperacion import Recuperacion
